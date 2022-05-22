@@ -13,21 +13,11 @@ app.use(cors());
 app.use(express.json());
 
 
-
-
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.00g3e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.yjdcv.mongodb.net/?retryWrites=true&w=majority`;
 
 console.log(uri);
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
-// MongoClient.connect(uri, function(err, client) {
-//   const collection = client.db("test").collection("devices");
-//   perform actions on the collection object
-//   client.close();
-// });
 
 async function run() {
   try{
