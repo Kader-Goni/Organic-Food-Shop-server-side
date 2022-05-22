@@ -65,6 +65,8 @@ async function run() {
       res.send(product);
     })
 
+    // post method code here:
+
     // post method
     app.post('/product', async (req, res) => {
       const newProduct = req.body;
@@ -74,7 +76,7 @@ async function run() {
     })
 
 
-    // update code here
+    // update user method code here:
 
     // update user put method
     app.put('/product/:id', async (req, res) => {
@@ -93,7 +95,7 @@ async function run() {
       res.send(result)
     })
 
-    // delete user method code here
+    // delete user method code here:
 
     // delete user method
     app.delete('/product/:id', async (req, res) => {
