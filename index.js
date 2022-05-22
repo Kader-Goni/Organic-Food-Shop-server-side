@@ -73,7 +73,28 @@ async function run() {
       res.send(result)
     })
 
+    
     // update code here
+
+    // update user put method
+    app.put('/product/:id', async (req, res) => {
+      const id = req.params.id;
+      const quantity = req.body;
+      const stock = quantity.stock;
+      console.log(quantity)
+      const filter = {_id: objectId(id)};
+      const options = {upsert: true};
+      const updatedDoc = {
+        $set: {
+          stock
+        }
+      };
+      const result = await productCollection.updateOne(filter, updatedDoc, options);
+      res.send(result)
+    })
+
+    // delete user method code here
+    
 
   }finally{}
 }
