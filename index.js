@@ -73,7 +73,7 @@ async function run() {
       res.send(result)
     })
 
-    
+
     // update code here
 
     // update user put method
@@ -94,6 +94,14 @@ async function run() {
     })
 
     // delete user method code here
+
+    // delete user method
+    app.delete('/product/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = {_id: objectId(id)}
+      const result = await productCollection.deleteOne(query);
+      res.send(result);
+    })
     
 
   }finally{}
